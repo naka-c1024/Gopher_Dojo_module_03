@@ -40,8 +40,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	jsonDate.Fortune = RtnFortune(rdmNum)
 	jsonDate.Wish = RtnWish(rdmNum)
 	jsonDate.Health = RtnHealth(rdmNum)
-	err := json.NewEncoder(w).Encode(jsonDate)
-	if err != nil {
+	if err := json.NewEncoder(w).Encode(jsonDate); err != nil {
 		log.Println(err)
 	}
 }
