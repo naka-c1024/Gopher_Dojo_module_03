@@ -7,9 +7,9 @@ import (
 
 func TestRtnHealth(t *testing.T) {
 	cases := []struct {
-		name     string // サブテストの名前
-		input    int    // 関数に渡すもの
-		expected string // 期待するもの
+		name     string
+		input    int
+		expected string
 	}{
 		{name: "0", input: 0, expected: "Very good. It will improve with exercise."},
 		{name: "1", input: 1, expected: "Good."},
@@ -21,7 +21,7 @@ func TestRtnHealth(t *testing.T) {
 		{name: "7", input: 7, expected: "??"},
 	}
 	for _, c := range cases {
-		c := c // クロージャが順番に呼ばれない可能性もあるため、このスコープ内でのローカル変数をちゃんと定義する
+		c := c
 		t.Run(c.name,
 			func(t *testing.T) {
 				if actual := fortune.RtnHealth(c.input); actual != c.expected {
@@ -33,9 +33,9 @@ func TestRtnHealth(t *testing.T) {
 
 func TestRtnWish(t *testing.T) {
 	cases := []struct {
-		name     string // サブテストの名前
-		input    int    // 関数に渡すもの
-		expected string // 期待するもの
+		name     string
+		input    int
+		expected string
 	}{
 		{name: "0", input: 0, expected: "It will definitely come true."},
 		{name: "1", input: 1, expected: "It shall come true without a hitch."},
@@ -47,7 +47,7 @@ func TestRtnWish(t *testing.T) {
 		{name: "7", input: 7, expected: "??"},
 	}
 	for _, c := range cases {
-		c := c // クロージャが順番に呼ばれない可能性もあるため、このスコープ内でのローカル変数をちゃんと定義する
+		c := c
 		t.Run(c.name,
 			func(t *testing.T) {
 				if actual := fortune.RtnWish(c.input); actual != c.expected {
@@ -59,9 +59,9 @@ func TestRtnWish(t *testing.T) {
 
 func TestRtnFortune(t *testing.T) {
 	cases := []struct {
-		name     string // サブテストの名前
-		input    int    // 関数に渡すもの
-		expected string // 期待するもの
+		name     string
+		input    int
+		expected string
 	}{
 		{name: "0", input: 0, expected: "Dai-kichi"},
 		{name: "1", input: 1, expected: "Kichi"},
@@ -73,7 +73,7 @@ func TestRtnFortune(t *testing.T) {
 		{name: "7", input: 7, expected: "??"},
 	}
 	for _, c := range cases {
-		c := c // クロージャが順番に呼ばれない可能性もあるため、このスコープ内でのローカル変数をちゃんと定義する
+		c := c
 		t.Run(c.name,
 			func(t *testing.T) {
 				if actual := fortune.RtnFortune(c.input); actual != c.expected {

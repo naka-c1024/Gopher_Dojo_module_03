@@ -50,7 +50,6 @@ func TestHandler(t *testing.T) {
 	fortune.Handler(w, r)                              // ここで実行
 	rw := w.Result()
 	defer rw.Body.Close()
-	// ステータスコードが200か確認
 	if rw.StatusCode != http.StatusOK {
 		t.Fatal("unexpected status code")
 	}
